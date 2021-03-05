@@ -1,0 +1,76 @@
+-isntalacao dos pacotes
+em
+terminal
+  dotnet --version
+  
+  arrastar pasta para o explorer
+ 
+----
+
+PROJETOS: 
+dotnet web
+dotnet webapi
+dotnet mvc
+------
+
+ctrl D  - seleciona a duas palavras do método;
+adicionar o using do model - using pasta e pasta model
+executar a aplicacao sempre a qualquer alteracao - dotnet watch run
+ctrl c - para a aplicacao
+
+
+CREATE TABLE [Produtos](
+   [ProdutoId] [int] IDENTITY(1,1) NOT NULL,
+   [Nome] [nvarchar](100) NOT NULL,
+   [Preco] [decimal](18, 2) NOT NULL,
+   [Estoque] [int] NOT NULL,
+   [Imagem] [nvarchar](250) NULL,
+CONSTRAINT [PK_Produtos] PRIMARY KEY CLUSTERED(
+[ProdutoId] ASC
+))
+
+
+CREATE TABLE [Contas](
+   [ContaId] [int] IDENTITY(1,1) NOT NULL,
+   [Nome] [nvarchar](100) NOT NULL,
+   [ValorOriginal] [decimal](18, 2) NOT NULL,
+   [DataVencimento] [int] NOT NULL,
+   [DataPagamento] [nvarchar](250) NULL,
+CONSTRAINT [PK_Contas] PRIMARY KEY CLUSTERED(
+[ContaId] ASC
+))
+
+usuarios
+id int
+nome string
+cargo
+usuario
+senha
+data
+idempresa
+email
+ativo
+
+
+
+dotnet ef dbcontext scaffold "Data Source=Macoratti;Initial Catalog=InventarioDB;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -o Models -f -c AppDbContext  
+
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=Macoratti;Initial Catalog=InventarioDB;Integrated Security=True"
+  },
+  "Jwt": {
+    "Key": "Numsey#2020Abracadabra@pinamonhangaba%$#%$#$PlutaoIu$3@fgJu",
+    "Issuer": "InventarioNeTAuthenticationServer",
+    "Audience": "InventarioNeTPostmanClient",
+    "Subject": "InventarioNeTAcessToken"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*"
+}
